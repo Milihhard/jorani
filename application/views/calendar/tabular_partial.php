@@ -64,6 +64,7 @@ if (count($tabular) > 0) {?>
     <tr>
       <td><?php echo $employee->name; ?></td>
       <?php foreach ($employee->days as $day) {
+        $dataIds= '';
           $dayIterator++;
           $overlapping = FALSE;
           $style = '';
@@ -171,7 +172,6 @@ if (count($tabular) > 0) {?>
                     $dayType = "";
                 } else {
                     //Hide leave type to users who are not part of HR/Admin
-                    $dataIds= '';
                     if (($is_hr == TRUE) || 
                             ($is_admin == TRUE) || 
                             ($employee->manager == $user_id) || 
